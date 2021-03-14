@@ -2,6 +2,13 @@
 
 <h1>Filmes</h1>
 
+<%= form_with(model: @filme, method: :get) do %>
+  Nome: <%= text_field_tag :nome, params[:nome] %>
+  <%= submit_tag 'Buscar', name: nil %>
+<% end %>
+
+  <br/>
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -20,8 +27,8 @@
         <td><%= filme.nome %></td>
         <td><%= filme.ano %></td>
         <td><%= filme.sinopse %></td>
-        <td><%= link_to filme.diretor, diretor_path(filme.diretor)%></td>
-        <td><%= filme.nota %></td>
+        <td><%= link_to filme.diretor, {:controller => "filmes", :action => "index", :diretor => filme.diretor}%>
+        <td><%= filme.nota %></td></td>
         <td><%= link_to 'Mostrar', filme %></td>
         <td><%= link_to 'Editar', edit_filme_path(filme) %></td>
         <td><%= link_to 'Deletar', filme, method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>

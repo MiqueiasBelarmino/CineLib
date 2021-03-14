@@ -3,13 +3,14 @@ class FilmesController < ApplicationController
 
   # GET /filmes or /filmes.json
   def index
-    @filmes = Filme.all
-  end
+    if params[:nome]       
+      @filmes = Filme.where('nome LIKE ?', "%#{params[:nome]}%")
+    elsif params[:diretor]
+      @filmes = Filme.where("diretor = ?", params[:diretor])
+    else 
+      @filmes = Filme.all
+    end
 
-  def diretor
-    # @filmes = Filme.all
-    @filmes = Filme.where("diretor = ?", params[:diretor])
-    #find_by('diretor',params[:diretor])
   end
   
   # GET /filmes/1 or /filmes/1.json
@@ -71,5 +72,6 @@ class FilmesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def filme_params
       params.require(:filme).permit(:nome, :ano, :sinopse, :diretor, :nota)
+      # params.permit(:nome, :ano, :sinopse, :diretor, :nota)
     end
 end

@@ -1,2 +1,3 @@
 class Filme < ApplicationRecord
+
 end

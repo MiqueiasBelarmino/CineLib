@@ -1,24 +1,23 @@
-# README
+Criar uma base de filmes em Ruby On Rails que ajudará os cinéfilos a organizar seus DVD's.
+Os filmes deverão ser compostos por:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Nome
+* Ano de Lançamento
+* Sinopse
+* Diretor
+* Nota (de 1 a 5)
 
-Things you may want to cover:
+O sistema deve permitir:
 
-* Ruby version
+1 Criar, editar e apagar um filme.
+2 Localizar um filme pelo nome.
 
-* System dependencies
+### Opcional
 
-* Configuration
+* Se clicar no diretor, o sistema deve listar todos os filmes que ele dirigiu.
 
-* Database creation
+### Opcional - Ferramentas
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Uso de algum framework ou biblioteca JS
+* Testes automatizados
+* Tailwind CSS (preferencial) ou Twitter Bootstrap
