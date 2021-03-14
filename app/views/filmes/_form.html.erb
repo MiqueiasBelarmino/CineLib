@@ -13,33 +13,54 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <!-- <%= form.label :nome %> -->
-    <%= form.text_field :nome %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-xs-12">
+        <div class="form-group">
+          <%= form.label :nome %>
+          <%= form.text_field :nome, class: 'form-control'  %>
+        </div>
+      
+      
+
+      <!-- <div class="row"> -->
+        <div class="form-group">
+          <%= form.label :ano %>
+          <%= form.number_field :ano, class: 'form-control'  %>
+        </div>
+      <!-- </div> -->
+      
+
+      <!-- <div class="row"> -->
+        <div class="form-group">
+          <%= form.label :sinopse %>
+          <%= form.text_area :sinopse, class: 'form-control'  %>
+        </div>
+      <!-- </div> -->
+      
+
+      <!-- <div class="row"> -->
+        <div class="form-group">
+          <%= form.label :diretor %>
+          <%= form.text_field :diretor, class: 'form-control'  %>
+        </div>
+      <!-- </div> -->
+      
+
+      <!-- <div class="row"> -->
+        <div class="form-group">
+          <%= form.label :nota %>
+          <%= form.number_field :nota, class: 'form-control' %>
+        </div>
+      <!-- </div> -->
+      
+
+      <!-- <div class="row"> -->
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <!-- </div> -->
+    </div>
   </div>
 
-  <div class="field">
-    <!-- <%= form.label :ano %> -->
-    <%= form.number_field :ano %>
-  </div>
-
-  <div class="field">
-    <!-- <%= form.label :sinopse %> -->
-    <%= form.text_area :sinopse %>
-  </div>
-
-  <div class="field">
-    <!-- <%= form.label :diretor %> -->
-    <%= form.text_field :diretor %>
-  </div>
-
-  <div class="field">
-    <!-- <%= form.label :nota %> -->
-    <%= form.number_field :nota %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
 </div>

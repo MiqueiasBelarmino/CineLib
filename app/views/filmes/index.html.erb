@@ -23,7 +23,7 @@
         <td><%= link_to filme.diretor, diretor_path(filme.diretor)%></td>
         <td><%= filme.nota %></td>
         <td><%= link_to 'Mostrar', filme %></td>
-        <td><%= link_to 'Editr', edit_filme_path(filme) %></td>
+        <td><%= link_to 'Editar', edit_filme_path(filme) %></td>
         <td><%= link_to 'Deletar', filme, method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
       </tr>
     <% end %>

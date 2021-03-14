@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Filmes</h1>
+<h1>Dirigidos por <%= params[:diretor]%></h1>
 
 <table class="table table-bordered">
   <thead>
@@ -23,7 +23,7 @@
         <td><%= filme.diretor%></td>
         <td><%= filme.nota %></td>
         <td><%= link_to 'Mostrar', filme %></td>
-        <td><%= link_to 'Editr', edit_filme_path(filme) %></td>
+        <td><%= link_to 'Editar', edit_filme_path(filme) %></td>
         <td><%= link_to 'Deletar', filme, method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
       </tr>
     <% end %>
