@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root to: "filmes#index"
 
+  get 'filmes/:diretor/diretor', to: "filmes#diretor", as: :diretor
+
 
 end

@@ -20,7 +20,7 @@
         <td><%= filme.nome %></td>
         <td><%= filme.ano %></td>
         <td><%= filme.sinopse %></td>
-        <td><%= link_to filme.diretor, diretor_path(filme.diretor)%></td>
+        <td><%= filme.diretor%></td>
         <td><%= filme.nota %></td>
         <td><%= link_to 'Mostrar', filme %></td>
         <td><%= link_to 'Editr', edit_filme_path(filme) %></td>
