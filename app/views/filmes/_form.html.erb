@@ -1,66 +1,52 @@
 <div class="container">
-<%= form_with(model: filme) do |form| %>
+  <%= form_with(model: filme) do |form| %>
 
-  <% if filme.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(filme.errors.count, "error") %> prohibited this filme from being saved:</h2>
+    
 
-      <ul>
-        <% filme.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-xs-12">
+          <% if filme.errors.any? %>
+            <div class="alert alert-danger">
+              Ops! Encontramos <%= pluralize(filme.errors.count, 'erro', 'erros') %>
+              <ul>
+                <% filme.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= form.label :nome %>
+            <%= form.text_field :nome, class: 'form-control'  %>
+          </div>
+        
+          <div class="form-group">
+            <%= form.label :ano %>
+            <%= form.number_field :ano, class: 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :sinopse %>
+            <%= form.text_area :sinopse, class: 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :diretor %>
+            <%= form.text_field :diretor, class: 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :nota %>
+            <%= form.number_field :nota, class: 'form-control' %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit %>
+          </div>
+
+      </div>
     </div>
+
   <% end %>
-
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3 col-xs-12">
-        <div class="form-group">
-          <%= form.label :nome %>
-          <%= form.text_field :nome, class: 'form-control'  %>
-        </div>
-      
-      
-
-      <!-- <div class="row"> -->
-        <div class="form-group">
-          <%= form.label :ano %>
-          <%= form.number_field :ano, class: 'form-control'  %>
-        </div>
-      <!-- </div> -->
-      
-
-      <!-- <div class="row"> -->
-        <div class="form-group">
-          <%= form.label :sinopse %>
-          <%= form.text_area :sinopse, class: 'form-control'  %>
-        </div>
-      <!-- </div> -->
-      
-
-      <!-- <div class="row"> -->
-        <div class="form-group">
-          <%= form.label :diretor %>
-          <%= form.text_field :diretor, class: 'form-control'  %>
-        </div>
-      <!-- </div> -->
-      
-
-      <!-- <div class="row"> -->
-        <div class="form-group">
-          <%= form.label :nota %>
-          <%= form.number_field :nota, class: 'form-control' %>
-        </div>
-      <!-- </div> -->
-      
-
-      <!-- <div class="row"> -->
-        <div class="actions">
-          <%= form.submit %>
-        </div>
-      <!-- </div> -->
-    </div>
-  </div>
-
-<% end %>
 </div>
